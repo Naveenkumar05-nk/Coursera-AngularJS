@@ -12,7 +12,7 @@
 	    body{
 		     
             min-height:100%;
-            background:linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(255, 0, 150, 0.3)), url(styles/shopping.jfif);
+            background:linear-gradient(0deg, rgba(255, 150, 140, 0.3), rgba(255, 150, 140, 0.3)), url(styles/shopping.jfif);
             background-size:cover;
 		 }
         .emptyMessage {
@@ -58,7 +58,7 @@
             <div ng-controller="AlreadyBoughtController as bought" class="col-md-6">
                 <h2><b>Already Bought:</b></h2>
                 <ol>
-                    <li ng-repeat="item in bought.items"><b>Bought {{item.quantity}} {{item.name}}</b></li>
+                    <li ng-repeat="item in bought.items" style="color: red"><b>Bought {{item.quantity}} {{item.name}}</b></li>
                 </ol>
                 <div ng-if="bought.items.length===0" class="emptyMessage">Nothing bought yet.</div>
             </div>
