@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" ng-app="ShoppingListCheckOff">
+
+<head>
+    <title>Shopping List Check Off</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+	
+	    body{
+		     
+            min-height:100%;
+            background:linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(255, 0, 150, 0.3)), url(styles/shopping.jfif);
+            background-size:cover;
+		 }
+        .emptyMessage {
+            font-weight: bold;
+            color: blue;
+            font-size: 1.2em;
+        }
+
+        li {
+            margin-bottom: 7px;
+            font-size: 1.2em;
+        }
+
+        li>button {
+            margin-left: 6px;
+        }
+
+        button>span {
+            color: blue;
+        }
+		.txt{
+		color: blue;
+		}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="txt"><b>Shopping List Check Off</b></h1>
+
+        <div class="row">
+
+            <!-- To Buy List -->
+            <div ng-controller="ToBuyController as toBuy" class="col-md-6">
+                <h2><b>To Buy:</b></h2>
+                <ol>
+                    <li ng-repeat="item in toBuy.items"><b>Buy {{item.quantity}} {{item.name}} </b><button ng-click="toBuy.checkOff($index);" class="btn btn-default"><span class="glyphicon glyphicon-pushpin"></span> Bought</button></li>
+                </ol>
+                <div ng-if="toBuy.items.length===0" class="emptyMessage">Everything is bought!</div>
+            </div>
+
+            <!-- Already Bought List -->
+            <div ng-controller="AlreadyBoughtController as bought" class="col-md-6">
+                <h2><b>Already Bought:</b></h2>
+                <ol>
+                    <li ng-repeat="item in bought.items"><b>Bought {{item.quantity}} {{item.name}}</b></li>
+                </ol>
+                <div ng-if="bought.items.length===0" class="emptyMessage">Nothing bought yet.</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
