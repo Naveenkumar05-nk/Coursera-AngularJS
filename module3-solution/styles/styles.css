@@ -60,4 +60,5 @@ input[type="text"] {
 }
 #foundItemList li{
   padding-bottom: 10px;
+	color: white;
 }
