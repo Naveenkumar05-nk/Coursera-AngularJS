@@ -1,3 +1,11 @@
+body{
+	
+	background-image: url('rest.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
 h1 {
   margin-bottom: 30px;
 }
